@@ -52,16 +52,27 @@ function draw() {
             let sState = stats.stateData[stateName];
             if(sState) {
                 let cases = sState.cases;
+                let cured = sState.cured_discharged;
+                let deaths = sState.deaths;
                 let diameter = map(cases, 0, 50, 0, 8) * pow(2, myMap.zoom());
                 const pix = myMap.latLngToPixel(cState.latitude, cState.longitude);
 
                 var d = dist(mouseX, mouseY, pix.x, pix.y);
                 if (d < (diameter/2)) {
                     fill(237, 138, 24, 200);
+                    ellipse(pix.x, pix.y, diameter, diameter);
+                    fill(0, 0, 0, 255);
+                    textAlign(CENTER);
+                    textSize(diameter*0.13);
+                    text(stateName, pix.x , pix.y - diameter*0.12);
+                    textSize(diameter*0.1);
+                    text("Cases: "+cases, pix.x , pix.y + diameter*0.01);
+                    text("Cured: "+cured, pix.x , pix.y + diameter*0.11);
+                    text("Death: "+deaths, pix.x , pix.y + diameter*0.22);
                 } else {
                     fill(200, 100, 100, 100);
+                    ellipse(pix.x, pix.y, diameter, diameter);
                 }
-                ellipse(pix.x, pix.y, diameter, diameter);
             }
         }
     }
