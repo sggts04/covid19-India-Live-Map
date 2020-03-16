@@ -2,6 +2,8 @@ let myMap;
 let canvas;
 let stats;
 let coords;
+let font;
+let fontBold;
 let msg = "Loading...";
 const mappa = new Mappa('Leaflet');
 
@@ -15,6 +17,8 @@ const options = {
 
 // Preload API Response
 function preload() {
+    font = loadFont('fonts/OpenSans.ttf');
+    fontBold = loadFont('fonts/OpenSans-Bold.ttf');
     fetch('https://exec.clay.run/kunksed/mohfw-covid')
         .then(
             function (response) {
@@ -66,16 +70,17 @@ function draw() {
                 var d = dist(mouseX, mouseY, pix.x, pix.y);
                 if (d < (diameter/2)) {
                     // State is hovered
+                    textFont(font);
                     fill(237, 138, 24, 200);
                     ellipse(pix.x, pix.y, diameter, diameter);
                     fill(0, 0, 0, 255);
                     textAlign(CENTER);
                     textSize(diameter*0.13);
-                    text(stateName, pix.x , pix.y - diameter*0.16);
+                    text(stateName, pix.x , pix.y - diameter*0.24);
                     textSize(diameter*0.1);
-                    text("Cases: "+cases, pix.x , pix.y - diameter*0.02);
-                    text("Cured: "+cured, pix.x , pix.y + diameter*0.08);
-                    text("Deaths: "+deaths, pix.x , pix.y + diameter*0.18);
+                    text("Cases: "+cases, pix.x , pix.y - diameter*0.1);
+                    text("Cured: "+cured, pix.x , pix.y);
+                    text("Deaths: "+deaths, pix.x , pix.y + diameter*0.1);
                 } else {
                     //State isn't hovered
                     fill(200, 100, 100, 100);
@@ -83,21 +88,23 @@ function draw() {
                 }
             }
         }
-
+        textFont(font);
         textAlign(RIGHT, TOP);
         textSize(windowWidth/100 + windowHeight/100);
 
         fill(255, 255, 255, 255);
-        rect(windowWidth-windowWidth/200-textWidth("Total Cured Cases: " + stats.countryData.cured_dischargedTotal), 0, windowWidth, 5*textSize() + windowWidth/400);
+        rect(windowWidth-windowWidth/200-textWidth("Total Cured Cases: " + stats.countryData.cured_dischargedTotal), 0, windowWidth, 5*textSize() + 3*windowWidth/400);
 
         fill(0, 0, 0, 255);
-        textStyle(BOLD);
-        text("India", windowWidth-windowWidth/400, windowWidth/400);
-        textStyle(NORMAL);
-        text("Total Cases: " + stats.countryData.total, windowWidth-windowWidth/400, textSize() + windowWidth/400);
-        text("Total Cured Cases: " + stats.countryData.cured_dischargedTotal, windowWidth-windowWidth/400, 2*textSize() + windowWidth/400);
-        text("Total Deaths: " + stats.countryData.deathsTotal, windowWidth-windowWidth/400, 3*textSize() + windowWidth/400);
-        text("Source: mohfw.gov.in", windowWidth-windowWidth/400, 4*textSize() + windowWidth/400);
+        textFont(fontBold);
+        textSize(windowWidth/80 + windowHeight/80);
+        text("India", windowWidth-windowWidth/400, 0 - windowWidth/300);
+        textFont(font);
+        textSize(windowWidth/100 + windowHeight/100);
+        text("Total Cases: " + stats.countryData.total, windowWidth-windowWidth/400, textSize());
+        text("Total Cured Cases: " + stats.countryData.cured_dischargedTotal, windowWidth-windowWidth/400, 2*textSize());
+        text("Total Deaths: " + stats.countryData.deathsTotal, windowWidth-windowWidth/400, 3*textSize());
+        text("Source: mohfw.gov.in", windowWidth-windowWidth/400, 4*textSize());
     } else {
         // If data isn't loaded yet
         fill(0, 0, 0);
