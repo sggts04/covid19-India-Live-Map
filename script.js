@@ -71,11 +71,11 @@ function draw() {
                     fill(0, 0, 0, 255);
                     textAlign(CENTER);
                     textSize(diameter*0.13);
-                    text(stateName, pix.x , pix.y - diameter*0.12);
+                    text(stateName, pix.x , pix.y - diameter*0.16);
                     textSize(diameter*0.1);
-                    text("Cases: "+cases, pix.x , pix.y + diameter*0.01);
-                    text("Cured: "+cured, pix.x , pix.y + diameter*0.11);
-                    text("Death: "+deaths, pix.x , pix.y + diameter*0.22);
+                    text("Cases: "+cases, pix.x , pix.y - diameter*0.02);
+                    text("Cured: "+cured, pix.x , pix.y + diameter*0.08);
+                    text("Deaths: "+deaths, pix.x , pix.y + diameter*0.18);
                 } else {
                     //State isn't hovered
                     fill(200, 100, 100, 100);
