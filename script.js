@@ -2,6 +2,7 @@ let myMap;
 let canvas;
 let stats;
 let coords;
+let msg = "Loading...";
 const mappa = new Mappa('Leaflet');
 
 // Lets put all our map options in a single object
@@ -19,6 +20,7 @@ function preload() {
                 if (response.status !== 200) {
                     console.log('Looks like there was a problem. Status Code: ' +
                         response.status);
+                    alert("Something went wrong, please try after some time.");
                     return;
                 }
 
@@ -31,6 +33,7 @@ function preload() {
         )
         .catch(function (err) {
             console.log('Fetch Error :-S', err);
+            alert("Something went wrong, please try after some time.");
         });
     coords = loadJSON("coords.json");
 }
@@ -75,6 +78,11 @@ function draw() {
                 }
             }
         }
+    } else {
+        fill(0, 0, 0);
+        textAlign(CENTER);
+        textSize(windowWidth/10);
+        text("Loading...", windowWidth/2, windowHeight/2);
     }
 }
 
