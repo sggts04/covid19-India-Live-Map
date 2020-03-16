@@ -1,142 +1,172 @@
-{
-    "Andaman and Nicobar Islands": {
-        "latitude": "11.66702557",
-        "longitude": "92.73598262"
+[
+    {
+        "stateN": "Andaman and Nicobar Islands",
+        "latitude": 11.66702557,
+        "longitude": 92.73598262
     },
-    "Andhra Pradesh": {
-        "latitude": "14.7504291",
-        "longitude": "78.57002559"
+    {
+        "stateN": "Andhra Pradesh",
+        "latitude": 14.7504291,
+        "longitude": 78.57002559
     },
-    "Arunachal Pradesh": {
-        "latitude": "27.10039878",
-        "longitude": "93.61660071"
+    {
+        "stateN": "Arunachal Pradesh",
+        "latitude": 27.10039878,
+        "longitude": 93.61660071
     },
-    "Assam": {
-        "latitude": "26.7499809",
-        "longitude": "94.21666744"
+    {
+        "stateN": "Assam",
+        "latitude": 26.7499809,
+        "longitude": 94.21666744
     },
-    "Bihar": {
-        "latitude": "25.78541445",
-        "longitude": "87.4799727"
+    {
+        "stateN": "Bihar",
+        "latitude": 25.0961,
+        "longitude": 85.3131
     },
-    "Chandigarh": {
-        "latitude": "30.71999697",
-        "longitude": "76.78000565"
+    {
+        "stateN": "Chhattisgarh",
+        "latitude": 22.09042035,
+        "longitude": 82.15998734
     },
-    "Chhattisgarh": {
-        "latitude": "22.09042035",
-        "longitude": "82.15998734"
+    {
+        "stateN": "Dadra and Nagar Haveli and Daman & Diu",
+        "latitude": 20.26657819,
+        "longitude": 73.0166178
     },
-    "Dadra and Nagar Haveli and Daman & Diu": {
-        "latitude": "20.26657819",
-        "longitude": "73.0166178"
+    {
+        "stateN": "Delhi",
+        "latitude": 28.6699929,
+        "longitude": 77.23000403
     },
-    "Delhi": {
-        "latitude": "28.6699929",
-        "longitude": "77.23000403"
+    {
+        "stateN": "Goa",
+        "latitude": 15.491997,
+        "longitude": 73.81800065
     },
-    "Goa": {
-        "latitude": "15.491997",
-        "longitude": "73.81800065"
+    {
+        "stateN": "Haryana",
+        "latitude": 29.0588,
+        "longitude": 76.0856
     },
-    "Haryana": {
-        "latitude": "28.45000633",
-        "longitude": "77.01999101"
+    {
+        "stateN": "Himachal Pradesh",
+        "latitude": 31.1048,
+        "longitude": 77.1734
     },
-    "Himachal Pradesh": {
-        "latitude": "31.10002545",
-        "longitude": "77.16659704"
+    {
+        "stateN": "Union Territory of Jammu and Kashmir",
+        "latitude": 33.7782,
+        "longitude": 75.5762
     },
-    "Union Territory of Jammu and Kashmir": {
-        "latitude": "33.7782",
-        "longitude": "76.5762"
+    {
+        "stateN": "Union Territory of Ladakh",
+        "latitude": 34.2996,
+        "longitude": 77.2932
     },
-    "Union Territory of Ladakh": {
-        "latitude": "34.2996",
-        "longitude": "78.2932"
+    {
+        "stateN": "Jharkhand",
+        "latitude": 23.6102,
+        "longitude": 85.2799
     },
-    "Jharkhand": {
-        "latitude": "23.80039349",
-        "longitude": "86.41998572"
+    {
+        "stateN": "Karnataka",
+        "latitude": 12.57038129,
+        "longitude": 76.91999711
     },
-    "Karnataka": {
-        "latitude": "12.57038129",
-        "longitude": "76.91999711"
+    {
+        "stateN": "Kerala",
+        "latitude": 10.8505,
+        "longitude": 76.2711
     },
-    "Kerala": {
-        "latitude": "8.900372741",
-        "longitude": "76.56999263"
+    {
+        "stateN": "Lakshadweep",
+        "latitude": 10.56257331,
+        "longitude": 72.63686717
     },
-    "Lakshadweep": {
-        "latitude": "10.56257331",
-        "longitude": "72.63686717"
+    {
+        "stateN": "Madhya Pradesh",
+        "latitude": 22.9734,
+        "longitude": 78.6569
     },
-    "Madhya Pradesh": {
-        "latitude": "21.30039105",
-        "longitude": "76.13001949"
+    {
+        "stateN": "Maharashtra",
+        "latitude": 18.7515,
+        "longitude": 75.5139
     },
-    "Maharashtra": {
-        "latitude": "19.25023195",
-        "longitude": "73.16017493"
+    {
+        "stateN": "Manipur",
+        "latitude": 24.6637,
+        "longitude": 93.9063
     },
-    "Manipur": {
-        "latitude": "24.79997072",
-        "longitude": "93.95001705"
+    {
+        "stateN": "Meghalaya",
+        "latitude": 25.4670,
+        "longitude": 91.3662
     },
-    "Meghalaya": {
-        "latitude": "25.57049217",
-        "longitude": "91.8800142"
+    {
+        "stateN": "Mizoram",
+        "latitude": 23.1645,
+        "longitude": 92.9376
     },
-    "Mizoram": {
-        "latitude": "23.71039899",
-        "longitude": "92.72001461"
+    {
+        "stateN": "Nagaland",
+        "latitude": 26.1584,
+        "longitude": 94.5624
     },
-    "Nagaland": {
-        "latitude": "25.6669979",
-        "longitude": "94.11657019"
+    {
+        "stateN": "Odisha",
+        "latitude": 20.9517,
+        "longitude": 85.0985
     },
-    "Odisha": {
-        "latitude": "19.82042971",
-        "longitude": "85.90001746"
+    {
+        "stateN": "Puducherry",
+        "latitude": 11.9416,
+        "longitude": 79.8083
     },
-    "Puducherry": {
-        "latitude": "11.93499371",
-        "longitude": "79.83000037"
+    {
+        "stateN": "Punjab",
+        "latitude": 31.1471,
+        "longitude": 75.3412
     },
-    "Punjab": {
-        "latitude": "31.51997398",
-        "longitude": "75.98000281"
+    {
+        "stateN": "Rajasthan",
+        "latitude": 27.0238,
+        "longitude": 74.2179
     },
-    "Rajasthan": {
-        "latitude": "26.44999921",
-        "longitude": "74.63998124"
+    {
+        "stateN": "Sikkim",
+        "latitude": 27.5330,
+        "longitude": 88.5122
     },
-    "Sikkim": {
-        "latitude": "27.3333303",
-        "longitude": "88.6166475"
+    {
+        "stateN": "Tamil Nadu",
+        "latitude": 11.1271,
+        "longitude": 78.6569
     },
-    "Tamil Nadu": {
-        "latitude": "12.92038576",
-        "longitude": "79.15004187"
+    {
+        "stateN": "Telengana",
+        "latitude": 18.1124,
+        "longitude": 79.0193
     },
-    "Telengana": {
-        "latitude": "18.1124",
-        "longitude": "79.0193"
+    {
+        "stateN": "Tripura",
+        "latitude": 23.9408,
+        "longitude": 91.9882
     },
-    "Tripura": {
-        "latitude": "23.83540428",
-        "longitude": "91.27999914"
+    {
+        "stateN": "Uttar Pradesh",
+        "latitude": 26.8467,
+        "longitude": 80.9462
     },
-    "Uttar Pradesh": {
-        "latitude": "27.59998069",
-        "longitude": "78.05000565"
+    {
+        "stateN": "Uttarakhand",
+        "latitude": 30.0668,
+        "longitude": 79.0193
     },
-    "Uttarakhand": {
-        "latitude": "30.32040895",
-        "longitude": "78.05000565"
-    },
-    "West Bengal": {
-        "latitude": "22.58039044",
-        "longitude": "88.32994665"
+    {
+        "stateN": "West Bengal",
+        "latitude": 22.9868,
+        "longitude": 87.8550
     }
-}
+]
