@@ -5,9 +5,9 @@ let coords;
 let font;
 let fontBold;
 let msg = "Loading...";
+let linkColor = "white";
 const mappa = new Mappa('Leaflet');
 
-// Lets put all our map options in a single object
 const options = {
     lat: 22,
     lng: 82,
@@ -29,7 +29,7 @@ function preload() {
                     return;
                 }
 
-                // Examine the text in the response
+                // Save API Response
                 response.json().then(function (data) {
                     stats = data;
                     console.log(data);
@@ -40,6 +40,7 @@ function preload() {
             console.log('Fetch Error :-S', err);
             alert("Something went wrong, please try after some time.");
         });
+    // Load coordinates of each State/UT
     coords = loadJSON("coords.json");
 }
 
@@ -88,23 +89,38 @@ function draw() {
                 }
             }
         }
+
+        // Country Stats in Top Right
         textFont(font);
         textAlign(RIGHT, TOP);
         textSize(windowWidth/100 + windowHeight/100);
 
+        //Draw the white rectangle
         fill(255, 255, 255, 255);
-        rect(windowWidth-windowWidth/200-textWidth("Total Cured Cases: " + stats.countryData.cured_dischargedTotal), 0, windowWidth, 5*textSize() + 3*windowWidth/400);
+        rect(windowWidth-windowWidth/150-textWidth("Total Cured Cases: " + stats.countryData.cured_dischargedTotal), 0, windowWidth, 4*textSize() + windowWidth/150);
 
+        // Write the stats
         fill(0, 0, 0, 255);
         textFont(fontBold);
         textSize(windowWidth/80 + windowHeight/80);
-        text("India", windowWidth-windowWidth/400, 0 - windowWidth/300);
+        text("India", windowWidth-windowWidth/300, 0 - windowWidth/300);
         textFont(font);
         textSize(windowWidth/100 + windowHeight/100);
-        text("Total Cases: " + stats.countryData.total, windowWidth-windowWidth/400, textSize());
-        text("Total Cured Cases: " + stats.countryData.cured_dischargedTotal, windowWidth-windowWidth/400, 2*textSize());
-        text("Total Deaths: " + stats.countryData.deathsTotal, windowWidth-windowWidth/400, 3*textSize());
-        text("Source: mohfw.gov.in", windowWidth-windowWidth/400, 4*textSize());
+        text("Total Cases: " + stats.countryData.total, windowWidth-windowWidth/300, textSize());
+        text("Total Cured Cases: " + stats.countryData.cured_dischargedTotal, windowWidth-windowWidth/300, 2*textSize());
+        text("Total Deaths: " + stats.countryData.deathsTotal, windowWidth-windowWidth/300, 3*textSize());
+
+        // Links in bottom right
+        textSize(windowWidth/120 + windowHeight/120);
+        // Colour change on hover
+        if(linkColor === "white")
+            fill(255, 255, 255, 255);
+        else
+            fill(123, 119, 237, 255);
+        rect(windowWidth-windowWidth/150-textWidth("Github: sggts04/covid19-India-Live-Map"), windowHeight - 2*textSize() - windowWidth/100, windowWidth, windowHeight);
+        fill(0, 0, 0, 255);
+        text("Source: mohfw.gov.in", windowWidth-windowWidth/300, windowHeight - 2*textSize() - windowWidth/150);
+        text("Github: sggts04/covid19-India-Live-Map", windowWidth-windowWidth/300, windowHeight - textSize() - windowWidth/150);
     } else {
         // If data isn't loaded yet
         fill(0, 0, 0);
@@ -116,4 +132,19 @@ function draw() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+}
+
+function mousePressed() {
+    if(mouseX>=(windowWidth-windowWidth/150-textWidth("Github: sggts04/covid19-India-Live-Map")) && mouseX<=(windowWidth) && mouseY>=(windowHeight - 2*textSize() - windowWidth/100) && mouseY<=windowHeight) {
+        window.open('https://github.com/sggts04/covid19-India-Live-Map', '_blank');
+    }
+}
+
+function mouseMoved() {
+    if(mouseX>=(windowWidth-windowWidth/150-textWidth("Github: sggts04/covid19-India-Live-Map")) && mouseX<=(windowWidth) && mouseY>=(windowHeight - 2*textSize() - windowWidth/100) && mouseY<=windowHeight) {
+        linkColor = "blue";
+    }
+    else {
+        linkColor = "white";
+    }
 }
