@@ -117,10 +117,10 @@ function draw() {
             fill(255, 255, 255, 255);
         else
             fill(123, 119, 237, 255);
-        rect(windowWidth-windowWidth/150-textWidth("Github: sggts04/covid19-India-Live-Map"), windowHeight - 2*textSize() - windowWidth/100, windowWidth, windowHeight);
+        rect(windowWidth-windowWidth/90-textWidth("Github: sggts04/covid19-India-Live-Map"), windowHeight - 2*textSize() - windowWidth/60, windowWidth, windowHeight);
         fill(0, 0, 0, 255);
-        text("Source: mohfw.gov.in", windowWidth-windowWidth/300, windowHeight - 2*textSize() - windowWidth/150);
-        text("Github: sggts04/covid19-India-Live-Map", windowWidth-windowWidth/300, windowHeight - textSize() - windowWidth/150);
+        text("Source: mohfw.gov.in", windowWidth-windowWidth/190, windowHeight - 2*textSize() - windowWidth/90);
+        text("Github: sggts04/covid19-India-Live-Map", windowWidth-windowWidth/200, windowHeight - textSize() - windowWidth/100);
     } else {
         // If data isn't loaded yet
         fill(0, 0, 0);
@@ -135,13 +135,13 @@ function windowResized() {
 }
 
 function mousePressed() {
-    if(mouseX>=(windowWidth-windowWidth/150-textWidth("Github: sggts04/covid19-India-Live-Map")) && mouseX<=(windowWidth) && mouseY>=(windowHeight - 2*textSize() - windowWidth/100) && mouseY<=windowHeight) {
+    if(mouseX>=(windowWidth-windowWidth/90-textWidth("Github: sggts04/covid19-India-Live-Map")) && mouseX<=(windowWidth) && mouseY>=(windowHeight - 2*textSize() - windowWidth/60) && mouseY<=windowHeight) {
         window.open('https://github.com/sggts04/covid19-India-Live-Map', '_blank');
     }
 }
 
 function mouseMoved() {
-    if(mouseX>=(windowWidth-windowWidth/150-textWidth("Github: sggts04/covid19-India-Live-Map")) && mouseX<=(windowWidth) && mouseY>=(windowHeight - 2*textSize() - windowWidth/100) && mouseY<=windowHeight) {
+    if(mouseX>=(windowWidth-windowWidth/90-textWidth("Github: sggts04/covid19-India-Live-Map")) && mouseX<=(windowWidth) && mouseY>=(windowHeight - 2*textSize() - windowWidth/60) && mouseY<=windowHeight) {
         linkColor = "blue";
     }
     else {
