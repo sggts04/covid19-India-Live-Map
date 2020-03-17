@@ -2,6 +2,7 @@ let myMap;
 let canvas;
 let stats;
 let coords;
+let maxCases = 50;
 let font;
 let fontBold;
 let msg = "Loading...";
@@ -33,6 +34,14 @@ function preload() {
                 response.json().then(function (data) {
                     stats = data;
                     console.log(data);
+                    let maxC = 0;
+                    for(let key in stats.stateData) {
+                        if(stats.stateData[key].cases > maxC) {
+                            maxC = stats.stateData[key].cases;
+                        }
+                    }
+                    maxCases = maxC;
+                    console.log(maxCases);
                 });
             }
         )
@@ -41,7 +50,7 @@ function preload() {
             alert("Something went wrong, please try after some time.");
         });
     // Load coordinates of each State/UT
-    coords = loadJSON("coords.json");
+    coords = loadJSON("data/coords.json");
 }
 
 function setup() {
@@ -65,7 +74,7 @@ function draw() {
                 let cases = sState.cases;
                 let cured = sState.cured_discharged;
                 let deaths = sState.deaths;
-                let diameter = map(cases, 0, 50, 0, 8) * pow(2, myMap.zoom());
+                let diameter = map(cases, 0, maxCases, 0, 6) * pow(2, myMap.zoom());
                 const pix = myMap.latLngToPixel(cState.latitude, cState.longitude);
                 // Check for mouse hover
                 var d = dist(mouseX, mouseY, pix.x, pix.y);
