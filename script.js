@@ -33,6 +33,9 @@ function preload() {
                 // Save API Response
                 response.json().then(function (data) {
                     stats = data;
+                    if(!data.stateData) {
+                        alert("The API Response seems to be broken. Please alert me on twitter @sggts04 or try again after some time.");
+                    }
                     console.log(data);
                     let maxC = 0;
                     for(let key in stats.stateData) {
