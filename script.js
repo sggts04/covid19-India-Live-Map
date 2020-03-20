@@ -20,7 +20,7 @@ const options = {
 function preload() {
     font = loadFont('fonts/OpenSans.ttf');
     fontBold = loadFont('fonts/OpenSans-Bold.ttf');
-    fetch('https://exec.clay.run/kunksed/mohfw-covid')
+    fetch('https://covid19sggts04.herokuapp.com/')
         .then(
             function (response) {
                 if (response.status !== 200) {
@@ -92,7 +92,7 @@ function draw() {
                     text(stateName, pix.x , pix.y - diameter*0.24);
                     textSize(diameter*0.1);
                     text("Cases: "+cases, pix.x , pix.y - diameter*0.1);
-                    text("Cured: "+cured, pix.x , pix.y);
+                    text("Discharged: "+cured, pix.x , pix.y);
                     text("Deaths: "+deaths, pix.x , pix.y + diameter*0.1);
                 } else {
                     //State isn't hovered
@@ -109,7 +109,7 @@ function draw() {
 
         //Draw the white rectangle
         fill(255, 255, 255, 255);
-        rect(windowWidth-windowWidth/150-textWidth("Total Cured Cases: " + stats.countryData.cured_dischargedTotal), 0, windowWidth, 4*textSize() + windowWidth/150);
+        rect(windowWidth-windowWidth/150-textWidth("Total Discharged Cases: " + stats.countryData.cured_dischargedTotal), 0, windowWidth, 4*textSize() + windowWidth/150);
 
         // Write the stats
         fill(0, 0, 0, 255);
@@ -119,7 +119,7 @@ function draw() {
         textFont(font);
         textSize(windowWidth/100 + windowHeight/100);
         text("Total Cases: " + stats.countryData.total, windowWidth-windowWidth/300, textSize());
-        text("Total Cured Cases: " + stats.countryData.cured_dischargedTotal, windowWidth-windowWidth/300, 2*textSize());
+        text("Total Discharged Cases: " + stats.countryData.cured_dischargedTotal, windowWidth-windowWidth/300, 2*textSize());
         text("Total Deaths: " + stats.countryData.deathsTotal, windowWidth-windowWidth/300, 3*textSize());
 
         // Links in bottom right
