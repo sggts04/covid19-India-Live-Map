@@ -6,8 +6,8 @@ Live at [https://shreyasgupta.in/covid19-India-Live-Map/](https://shreyasgupta.i
 
 Data is fetched from an API that scrapes the data from the official government site [https://www.mohfw.gov.in/](https://www.mohfw.gov.in/).
 
-![](https://i.imgur.com/qxOgjyU.png)
+![](https://i.imgur.com/NBQ9ktZ.png)
 
-![](https://i.imgur.com/8KwDsxW.png)
+![](https://i.imgur.com/tR9Fj9I.png)
 
 Built using p5.js and mappa.js
